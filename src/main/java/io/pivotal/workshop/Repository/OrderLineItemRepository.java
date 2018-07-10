@@ -1,11 +1,11 @@
 package io.pivotal.workshop.Repository;
 
 import io.pivotal.workshop.Model.Account;
+import io.pivotal.workshop.Model.OrderLineItem;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface AccountRepository extends CrudRepository<Account, Long> {
-
+public interface OrderLineItemRepository  extends CrudRepository<OrderLineItem, Long> {
 }

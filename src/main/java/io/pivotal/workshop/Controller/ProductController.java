@@ -13,27 +13,27 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/account")
-public class AccountController {
+@RequestMapping("/product")
+public class ProductController {
 
     @Autowired
-    private AccountRepository accountRepository;
+    private ProductRepository productRepository;
 
 
     @PostMapping("/create")
-    public Account createAddress(@Valid @RequestBody Account account){
+    public Product createAddress(@Valid @RequestBody Product product){
 
-        return accountRepository.save(account);
+        return productRepository.save(product);
     }
 
     @RequestMapping("/all")
-    public Iterable<Account> findAll(){
-        return accountRepository.findAll();
+    public Iterable<Product> findAll(){
+        return productRepository.findAll();
     }
 
     @RequestMapping("/{id}")
-    public Optional<Account> findByID(@PathVariable("id") long id){
-        return accountRepository.findById(id);
+    public Optional<Product> findByID(@PathVariable("id") long id){
+        return productRepository.findById(id);
     }
 
 

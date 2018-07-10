@@ -1,17 +1,16 @@
 package io.pivotal.workshop.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "product")
 public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    long productId;/*
-    String Name;
+    @Column(name = "product_id")
+    long productId;
+    String name;
     String description;
-    String image; // todo: Check this type
-    double price;*/
+    String image;
+    double price;
 }

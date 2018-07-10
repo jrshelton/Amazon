@@ -1,5 +1,8 @@
 package io.pivotal.workshop.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -8,22 +11,15 @@ public class Account {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    @Column(name = "account_id")
     long accountId;
-    String firstName;
-    String lastName;
-    String emailAddress;
-    //@OneToMany
-    //Address address;
-
-
-    public Account(String firstName, String lastName, String emailAddress, Address address) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailAddress = emailAddress;
-        //this.address = address;
-    }
-
-
+    private String firstName;
+    private String lastName;
+    private String emailAddress;
+    @OneToMany
+    @JoinColumn(name = "account_id")
+    @JsonIgnore
+    private Set<Address> address;
 
 
     public long getAccountId() {
@@ -57,8 +53,15 @@ public class Account {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
+/*
+    public Set<Address> getAddress() {
+        return address;
+    }
+
+    public void setAddress(Set<Address> address) {
+        this.address = address;
+    }
 
 
-
-
+*/
 }
