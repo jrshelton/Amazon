@@ -31,9 +31,26 @@ public class AddressController {
     }
 
     @RequestMapping("/{id}")
-    public Optional<Address> findByID(@PathVariable("id") long id){
+    public Optional<Address> findById(@PathVariable("id") long id){
 
         return addressRepository.findById(id);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public void deleteById(@PathVariable("id") long id){
+         addressRepository.deleteById(id);
+
+    }
+
+    @PutMapping("edit/{id}")
+    public Address editById(@PathVariable("id") long id, @RequestBody Address address){
+        Optional<Address> addressOptional = addressRepository.findById(id);
+        if(!addressOptional.isPresent()){
+            return null;
+        }
+        address.setAddressId(id);
+        return addressRepository.save(address);
+
     }
 
 

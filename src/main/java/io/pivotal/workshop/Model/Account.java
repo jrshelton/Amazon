@@ -1,5 +1,6 @@
 package io.pivotal.workshop.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -18,7 +19,7 @@ public class Account {
     private String emailAddress;
     @OneToMany
     @JoinColumn(name = "account_id")
-    @JsonIgnore
+    @JsonBackReference
     private Set<Address> address;
 
 
@@ -53,7 +54,7 @@ public class Account {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
-/*
+
     public Set<Address> getAddress() {
         return address;
     }
@@ -62,6 +63,7 @@ public class Account {
         this.address = address;
     }
 
+    public Account(){}
 
-*/
+
 }
