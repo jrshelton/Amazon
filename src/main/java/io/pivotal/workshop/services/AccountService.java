@@ -1,10 +1,9 @@
-package io.pivotal.workshop.Services;
+package io.pivotal.workshop.services;
 
-import io.pivotal.workshop.Controller.AccountController;
-import io.pivotal.workshop.Controller.AddressController;
-import io.pivotal.workshop.Controller.OrderController;
-import io.pivotal.workshop.Controller.ShipmentController;
-import io.pivotal.workshop.Model.*;
+import io.pivotal.workshop.controller.AccountController;
+import io.pivotal.workshop.controller.AddressController;
+import io.pivotal.workshop.controller.OrderController;
+import io.pivotal.workshop.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;

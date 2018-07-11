@@ -1,9 +1,9 @@
-package io.pivotal.workshop.Controller;
+package io.pivotal.workshop.controller;
 
 
-import io.pivotal.workshop.Model.Account;
-import io.pivotal.workshop.Model.Shipment;
-import io.pivotal.workshop.Repository.ShipmentRepository;
+import io.pivotal.workshop.model.Account;
+import io.pivotal.workshop.model.Shipment;
+import io.pivotal.workshop.repository.ShipmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

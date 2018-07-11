@@ -1,7 +1,7 @@
-package io.pivotal.workshop.Repository;
+package io.pivotal.workshop.repository;
 
-import io.pivotal.workshop.Model.Account;
-import io.pivotal.workshop.Model.Shipment;
+import io.pivotal.workshop.model.Account;
+import io.pivotal.workshop.model.Shipment;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

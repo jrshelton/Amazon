@@ -1,7 +1,6 @@
-package io.pivotal.workshop.Repository;
+package io.pivotal.workshop.repository;
 
-import io.pivotal.workshop.Model.Account;
-import io.pivotal.workshop.Model.Product;
+import io.pivotal.workshop.model.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

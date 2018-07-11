@@ -1,8 +1,5 @@
-package io.pivotal.workshop.Model;
+package io.pivotal.workshop.model;
 
-import javafx.util.Pair;
-
-import javax.persistence.Tuple;
 import java.util.*;
 
 public class ShippingDetails {

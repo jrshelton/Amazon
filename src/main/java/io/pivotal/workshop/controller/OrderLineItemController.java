@@ -1,14 +1,14 @@
-package io.pivotal.workshop.Controller;
+package io.pivotal.workshop.controller;
 
 
-import io.pivotal.workshop.Model.Order;
-import io.pivotal.workshop.Model.OrderLineItem;
-import io.pivotal.workshop.Model.Product;
-import io.pivotal.workshop.Model.Shipment;
-import io.pivotal.workshop.Repository.OrderLineItemRepository;
-import io.pivotal.workshop.Repository.OrderRepository;
-import io.pivotal.workshop.Repository.ProductRepository;
-import io.pivotal.workshop.Repository.ShipmentRepository;
+import io.pivotal.workshop.model.Order;
+import io.pivotal.workshop.model.OrderLineItem;
+import io.pivotal.workshop.model.Product;
+import io.pivotal.workshop.model.Shipment;
+import io.pivotal.workshop.repository.OrderLineItemRepository;
+import io.pivotal.workshop.repository.OrderRepository;
+import io.pivotal.workshop.repository.ProductRepository;
+import io.pivotal.workshop.repository.ShipmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

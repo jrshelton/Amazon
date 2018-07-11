@@ -1,6 +1,6 @@
-package io.pivotal.workshop.Repository;
+package io.pivotal.workshop.repository;
 
-import io.pivotal.workshop.Model.OrderLineItem;
+import io.pivotal.workshop.model.OrderLineItem;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

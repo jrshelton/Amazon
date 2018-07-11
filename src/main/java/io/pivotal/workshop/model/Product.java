@@ -1,4 +1,4 @@
-package io.pivotal.workshop.Model;
+package io.pivotal.workshop.model;
 
 import javax.persistence.*;
 

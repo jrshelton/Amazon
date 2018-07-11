@@ -1,6 +1,5 @@
-package io.pivotal.workshop.Model;
+package io.pivotal.workshop.model;
 
-import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;

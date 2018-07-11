@@ -1,16 +1,14 @@
-package io.pivotal.workshop.Controller;
+package io.pivotal.workshop.controller;
 
-
-import io.pivotal.workshop.Services.AccountService;
+import io.pivotal.workshop.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
 
-import io.pivotal.workshop.Model.*;
-import io.pivotal.workshop.Repository.*;
+import io.pivotal.workshop.model.*;
+import io.pivotal.workshop.repository.*;
 
 import javax.validation.Valid;
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 

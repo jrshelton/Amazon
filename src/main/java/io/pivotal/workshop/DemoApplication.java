@@ -1,6 +1,6 @@
 package io.pivotal.workshop;
 
-import io.pivotal.workshop.Repository.AccountRepository;
+import io.pivotal.workshop.repository.AccountRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

@@ -1,9 +1,6 @@
-package io.pivotal.workshop.Model;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+package io.pivotal.workshop.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "order_line_item")

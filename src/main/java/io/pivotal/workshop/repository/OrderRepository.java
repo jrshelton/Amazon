@@ -1,14 +1,11 @@
-package io.pivotal.workshop.Repository;
+package io.pivotal.workshop.repository;
 
-import io.pivotal.workshop.Model.Account;
-import io.pivotal.workshop.Model.Order;
+import io.pivotal.workshop.model.Account;
+import io.pivotal.workshop.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import org.springframework.data.jpa.repository.Query;
 
 @Repository

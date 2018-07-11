@@ -1,13 +1,11 @@
-package io.pivotal.workshop.Controller;
+package io.pivotal.workshop.controller;
 
 
-import io.pivotal.workshop.Model.Account;
-import io.pivotal.workshop.Model.Address;
-import io.pivotal.workshop.Repository.AddressRepository;
+import io.pivotal.workshop.model.Address;
+import io.pivotal.workshop.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.Optional;
 
 

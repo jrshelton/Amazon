@@ -1,6 +1,7 @@
-package io.pivotal.workshop.Model;
+package io.pivotal.workshop.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,9 +13,11 @@ public class Account {
     @Id
     @Column(name = "account_id")
     long accountId;
+
     private String firstName;
     private String lastName;
     private String emailAddress;
+
     @OneToMany
     @JoinColumn(name = "account_id")
     @JsonBackReference
