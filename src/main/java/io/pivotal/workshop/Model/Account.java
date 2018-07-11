@@ -1,11 +1,9 @@
 package io.pivotal.workshop.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class Account {
@@ -20,8 +18,12 @@ public class Account {
     @OneToMany
     @JoinColumn(name = "account_id")
     @JsonBackReference
-    private Set<Address> address;
+    private List<Address> address;
 
+    public Address addAddress(Address address){
+        this.address.add(address);
+        return address;
+    }
 
     public long getAccountId() {
         return accountId;
@@ -55,11 +57,11 @@ public class Account {
         this.emailAddress = emailAddress;
     }
 
-    public Set<Address> getAddress() {
+    public List<Address> getAddress() {
         return address;
     }
 
-    public void setAddress(Set<Address> address) {
+    public void setAddress(List<Address> address) {
         this.address = address;
     }
 

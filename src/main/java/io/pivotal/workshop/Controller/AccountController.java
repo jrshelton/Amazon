@@ -28,6 +28,9 @@ public class AccountController {
     @Autowired
     private ShipmentController shipmentController;
 
+    @Autowired
+    private AddressController addressController;
+
     private AccountService accountService;
 
     public AccountController(){
@@ -50,6 +53,8 @@ public class AccountController {
         return accountRepository.findById(id);
     }
 
+
+
     @DeleteMapping("delete/{id}")
     public void deleteById(@PathVariable("id") long id){
         accountRepository.deleteById(id);
@@ -67,25 +72,42 @@ public class AccountController {
 
     }
 
-    @GetMapping("/orderNumbers/{id}")
-    public List<String> findOrderNumbers(@PathVariable("id") long id) throws IOException {
-        Iterable<Order> orders = orderController.findAll();
+    @GetMapping("/{id}/findOrders")
+    public Iterable<Order> findOrders(@PathVariable("id") long id){
+
         Account account = findByID(id).get();
+        return orderController.getAllByOrderDate(account);
+    }
+
+    @GetMapping("{id}/orderNumbers")
+    public List<String> findOrderNumbers(@PathVariable("id") long id) {
+        Account account = findByID(id).get();
+        Iterable<Order> orders = orderController.getAllByOrderDate(account);
+
         return accountService.findOrderNumbers(account, orders);
 
     }
 
-    @GetMapping("/orderDetails/{id}")
+    @GetMapping("{id}/orderDetails")
     public List<OrderPrinter> findOrderNumbersDetails(@PathVariable("id") long id) {
-        Iterable<Order> orders = orderController.findAll();
         Account account = findByID(id).get();
+        Iterable<Order> orders = orderController.getAllByOrderDate(account);
+
         return accountService.findOrderNumbersDetails(account, orders);
     }
 
-    @GetMapping("/shippingDetails/{id}")
+    @GetMapping("{id}/shippingDetails")
     public List<ShippingDetails> findShippingDetails(@PathVariable("id") long id){
         Account account = findByID(id).get();
-        Iterable<Shipment> shipments = shipmentController.findAll();
+        Iterable<Shipment> shipments = shipmentController.findByAccount(account);
         return accountService.findShippingDetails(account, shipments);
+    }
+
+    @PostMapping("{id}/addAddress")
+    public Address addAddress(@PathVariable("id") long id, @RequestBody Address address){
+        Account account = findByID(id).get();
+        address.setAccount(account);
+        Address newAddress = addressController.createAddress(address);
+        return newAddress;
     }
 }

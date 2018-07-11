@@ -1,6 +1,7 @@
 package io.pivotal.workshop.Services;
 
 import io.pivotal.workshop.Controller.AccountController;
+import io.pivotal.workshop.Controller.AddressController;
 import io.pivotal.workshop.Controller.OrderController;
 import io.pivotal.workshop.Controller.ShipmentController;
 import io.pivotal.workshop.Model.*;
@@ -13,7 +14,9 @@ public class AccountService {
 
     private OrderController orderController;
     private AccountController accountController;
-    private ShipmentController shipmentController;
+
+    @Autowired
+    private AddressController addressController;
 
     public AccountService( ){
 
@@ -55,5 +58,12 @@ public class AccountService {
         }
 
         return shippingDetails;
+    }
+
+
+    public Address addAddress(Account account, Address address) {
+        address.setAccount(account);
+        addressController.createAddress(address);
+        return account.addAddress(address);
     }
 }

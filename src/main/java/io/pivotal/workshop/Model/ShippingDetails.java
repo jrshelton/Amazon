@@ -10,24 +10,38 @@ public class ShippingDetails {
     Date shipmentDate;
     Date deliveryDate;
 
-
     Map<String, Integer> productNameQunaity;
 
-    public ShippingDetails( Date shippmentDate, Date deliveryDate, Set<OrderLineItem> lineItems) {
-        this.orderNumber = "ORDERNUMBER";
+    public Map<String, Integer> getProductNameQunaity() {
+        return productNameQunaity;
+    }
+
+
+
+    public ShippingDetails( Date shippmentDate, Date deliveryDate, List<OrderLineItem> lineItems) {
+        initOrderNumber(lineItems);
         this.shipmentDate = shippmentDate;
         this.deliveryDate = deliveryDate;
         this.productNameQunaity = initProductNameQuanity(lineItems);
+
     }
 
-    private Map<String, Integer>  initProductNameQuanity(Set<OrderLineItem> lineItems)
+    public void initOrderNumber(List<OrderLineItem> items){
+        try {
+            this.orderNumber = items.get(0).getOrder().getOrderNumber();
+        }catch(IndexOutOfBoundsException e){
+            this.orderNumber = "No Orders";
+        }
+    }
+
+    private Map<String, Integer>  initProductNameQuanity(List<OrderLineItem> lineItems)
     {
         Map<String, Integer> map= new HashMap<>();
         for(OrderLineItem item: lineItems){
-            String productName = item.getProduct().getName();
-            if(map.containsKey(productName)){
-                map.put(productName, map.get(productName)+1);
+            if(item.getProduct()!=null) {
+                map.put(item.getProduct().getName(), item.getQuantity());
             }
+
         }
         return map;
     }

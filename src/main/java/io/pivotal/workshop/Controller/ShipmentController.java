@@ -51,4 +51,9 @@ public class ShipmentController {
         return shipmentRepository.save(shipment);
 
     }
+
+
+    public Iterable<Shipment> findByAccount(Account account) {
+        return shipmentRepository.find(account);
+    }
 }

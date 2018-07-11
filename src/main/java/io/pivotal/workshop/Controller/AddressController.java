@@ -19,7 +19,7 @@ public class AddressController {
     private AddressRepository addressRepository;
 
     @PostMapping("/create")
-    public Address createAddress(@Valid @RequestBody Address address){
+    public Address createAddress(@RequestBody Address address){
 
         return addressRepository.save(address);
     }

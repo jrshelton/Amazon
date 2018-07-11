@@ -1,13 +1,13 @@
 package io.pivotal.workshop.Repository;
 
 import io.pivotal.workshop.Model.Account;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
-
-@Repository
 public interface AccountRepository extends CrudRepository<Account, Long> {
+
 
 }

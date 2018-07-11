@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "29d20d45-1f8f-4b14-b69a-ec04b63fd197",
+		"name": "amazon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/account/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"emailAddress\" : \"j@j.com\",\n\"firstName\" : \"jack\",\n\"lastName\" : \"shelton\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/account/1/addAddress",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"street\" : \"Forest\",\n\"building\" : \"1109\",\n\"state\" : \"IL\",\n\"zip\" : 60091,\n\"country\" : \"america\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/1/addAddress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1",
+						"addAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/product/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {   \"name\" : \"headphone\",\n\t\"description\" : \"apple white\",\n\t\"image\" : \" image\",\n\t\"price\" : 19.99\n\t}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/orderLineItem/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"quantity\" : 2,\n\t\"price\" : 19.99\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orderLineItem/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orderLineItem",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/shipment/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"shippedDate\" : \"2018-06-16\",\n\t\"deliveryDate\" : \"2018-06-19\"\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/shipment/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shipment",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/order/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderNumber\" : \"1000\",\n\t\"orderDate\" : \"2018-06-15\"\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/order/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/order/6/addAccount/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderNumber\" : \"1000\",\n\t\"orderDate\" : \"2018-06-15\"\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/order/6/addAccount/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"6",
+						"addAccount",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/orderLineItem/4/addProduct/3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Apple headphones\",\n\t\"description\" : \"white\",\n\t\"image\" : \"image\",\n\t\"price\" : 19.99\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orderLineItem/4/addProduct/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orderLineItem",
+						"4",
+						"addProduct",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/orderLineItem/4/addOrder/6",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Apple headphones\",\n\t\"description\" : \"white\",\n\t\"image\" : \"image\",\n\t\"price\" : 19.99\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orderLineItem/4/addOrder/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orderLineItem",
+						"4",
+						"addOrder",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/orderLineItem/4/addShipment/5",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Apple headphones\",\n\t\"description\" : \"white\",\n\t\"image\" : \"image\",\n\t\"price\" : 19.99\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/orderLineItem/4/addShipment/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orderLineItem",
+						"4",
+						"addShipment",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/account/1/findOrders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderNumber\" : \"1000\",\n\t\"orderDate\" : \"2018-06-15\"\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/1/findOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1",
+						"findOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/account/1/orderDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderNumber\" : \"1000\",\n\t\"orderDate\" : \"2018-06-15\"\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/1/orderDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1",
+						"orderDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/account/1/shippingDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {   \"name\" : \"Iphone\",\n\t\"description\" : \"Original\",\n\t\"image\" : \" image\",\n\t\"price\" : 199.99\n\t}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/1/shippingDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1",
+						"shippingDetails"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

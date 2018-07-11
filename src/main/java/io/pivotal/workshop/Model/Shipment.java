@@ -1,11 +1,10 @@
 package io.pivotal.workshop.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "shipment")
@@ -20,7 +19,7 @@ public class Shipment {
     @OneToMany
     @JoinColumn(name = "shipment_id")
     @JsonBackReference
-    Set<OrderLineItem> orderLineItems;
+    List<OrderLineItem> orderLineItems;
 
     @ManyToOne
     @JoinColumn(name = "account_id")
@@ -28,8 +27,15 @@ public class Shipment {
 
     @ManyToOne
     @JoinColumn(name = "address_id")
-    Address address;
+    Address ShippingAddress;
 
+
+
+
+
+    public void addLineItems(OrderLineItem item){
+        orderLineItems.add(item);
+    }
     public Date getShippedDate() {
         return shippedDate;
     }
@@ -46,11 +52,11 @@ public class Shipment {
         this.deliveryDate = deliveryDate;
     }
 
-    public Set<OrderLineItem> getOrderLineItems() {
+    public List<OrderLineItem> getOrderLineItems() {
         return orderLineItems;
     }
 
-    public void setOrderLineItems(Set<OrderLineItem> orderLineItems) {
+    public void setOrderLineItems(List<OrderLineItem> orderLineItems) {
         this.orderLineItems = orderLineItems;
     }
 
@@ -62,12 +68,12 @@ public class Shipment {
         this.account = account;
     }
 
-    public Address getAddress() {
-        return address;
+    public Address getShippingAddressAddress() {
+        return ShippingAddress;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setShippingAddressAddress(Address address) {
+        this.ShippingAddress = address;
     }
 
 
@@ -79,4 +85,6 @@ public class Shipment {
     public void setShipmentId(long shipmentId) {
         this.shipmentId = shipmentId;
     }
+
+
 }

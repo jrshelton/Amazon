@@ -28,8 +28,12 @@ public class OrderLineItem {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    @JsonBackReference
     private Order order;
+
+    public Shipment getShipment(){
+       return this.shipment;
+
+    }
 
     public int getQuantity() {
         return quantity;
@@ -48,7 +52,7 @@ public class OrderLineItem {
     }
 
     public double getTotalPrice() {
-        return totalPrice;
+        return price * quantity;
     }
 
     public void setTotalPrice(double totalPrice) {
@@ -63,16 +67,14 @@ public class OrderLineItem {
         this.product = product;
     }
 
-    public Shipment getShipment() {
-        return shipment;
-    }
+
 
     public void setShipment(Shipment shipment) {
         this.shipment = shipment;
     }
 
     public Order getOrder() {
-        return order;
+        return this.order;
     }
 
     public void setOrder(Order order) {

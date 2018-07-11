@@ -1,5 +1,7 @@
 package io.pivotal.workshop.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -26,7 +28,12 @@ public class Order {
 
     @OneToMany
     @JoinColumn(name = "order_id")
+    @JsonBackReference
     private Set<OrderLineItem> orderLineItems;
+
+    public void addLineItem(OrderLineItem item){
+        orderLineItems.add(item);
+    }
 
     public long getId() {
         return id;
@@ -54,14 +61,19 @@ public class Order {
 
     public double getTotal() {
         double tot = 0;
+        if(orderLineItems == null){
+            this.total = 0;
+            return 0;
+        }
         for(OrderLineItem item: orderLineItems){
-            tot += item.getPrice();
+           tot += item.getTotalPrice();
         }
         this.total = tot;
         return this.total;
     }
 
     public void setTotal(double total) {
+
         this.total = total;
     }
 
@@ -88,6 +100,7 @@ public class Order {
     public void setOrderLineItems(Set<OrderLineItem> orderLineItems) {
         this.orderLineItems = orderLineItems;
     }
+
 
 
 }

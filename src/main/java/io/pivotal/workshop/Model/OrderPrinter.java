@@ -9,9 +9,12 @@ public class OrderPrinter {
 
     String orderNumber;
     Address shippingAddress;
-    double totalPrice;
     List<String> productNames;
+
+
+
     Set<OrderLineItem> lineItems;
+
 
     public OrderPrinter(String orderNumber, Address shippingAddress, double totPrice,  Set<OrderLineItem> lineItems) {
         this.orderNumber = orderNumber;
@@ -28,6 +31,8 @@ public class OrderPrinter {
         }
         return names;
     }
+
+
     public String getOrderNumber() {
         return orderNumber;
     }
@@ -44,13 +49,29 @@ public class OrderPrinter {
         this.shippingAddress = shippingAddress;
     }
 
-    public double getTotPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotPrice(double totPrice) {
-        this.totalPrice = totPrice;
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
+
+    double totalPrice;
+
+    public List<String> getProductNames() {
+        return productNames;
+    }
+
+    public void setProductNames(List<String> productNames) {
+        this.productNames = productNames;
+    }
+
+    public Set<OrderLineItem> getLineItems() {
+        return lineItems;
+    }
+
+
 
 
 
